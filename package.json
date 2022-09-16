@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/DaneCronin/Team-Profile-Generator/issues"
   },
-  "homepage": "https://github.com/DaneCronin/Team-Profile-Generator#readme"
+  "homepage": "https://github.com/DaneCronin/Team-Profile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.0.3"
+  }
 }
