@@ -6,9 +6,9 @@ const Employee = require('../lib/Employee');
 test('Creates new Employee', () => {
     const employee = new Employee ('Dane', 'DaneCronin@gmail.com', 1);
 
-    expect(employee.name).toBe('Dane');
-    expect(employee.email).toBe('DaneCronin@gmail.com');
-    expect(employee.id).toEqual(expect.any(Number));
+    expect(employee.name).toEqual('Dane');
+    expect(employee.email).toEqual('DaneCronin@gmail.com');
+    expect(employee.id).toEqual(1);
     //expect(employee.github).toBe('');
 
 });
@@ -17,7 +17,7 @@ test('Creates new Employee', () => {
 test('gets employee name', () => {
     const employee = new Employee ('Dane', 'DaneCronin@gmail.com', 1);
 
-    expect(employee.getName().toEqual(expect.'Dane'));
+    expect(employee.getName().toEqual('Dane'));
 });
 
 
@@ -25,12 +25,12 @@ test('gets employee name', () => {
 test('gets employee email', () => {
     const employee = new Employee ('Dane', 'DaneCronin@gmail.com', 1);
 
-    expect(employee.getEmail().toEqual(expect.'DaneCronin@gmail.com'));
+    expect(employee.getEmail().toEqual('DaneCronin@gmail.com'));
 })
 
 //Test to see if gets ID from getID()
 test('gets employee ID', () => {
     const employee = new Employee ('Dane', 'DaneCronin@gmail.com', 1);
 
-    expect(employee.getId().toEqual(expect.any(Number)));
+    expect(employee.getId().toEqual(1));
 })

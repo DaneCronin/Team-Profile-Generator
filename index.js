@@ -6,6 +6,7 @@ const fs = require('fs');
 const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
+const Engineer = require('./lib/Engineer');
 
 
 //Create array to hold a team
@@ -153,6 +154,21 @@ const addEmployee = () => {
 
         },
         {
+            type: 'input',
+            name: 'gitHub',
+            message: "Please enter the engineer's GitHub username (no @ needed)",
+            when: (input) => input.role === "Engineer",
+            validate: gitHubInput => {
+                if (gitHubInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the engineer's GitHub username!");
+                    return false;
+                }
+            }
+
+        },
+        {
             type: 'confirm',
             name: 'confirmAddEmployee',
             message: 'Would you like to add more team members?',
@@ -160,10 +176,23 @@ const addEmployee = () => {
         }
     ])
     .then(employeeData => {
-        // data for employee types 
+        // data for employees 
 
         let { name, id, email, role, github, school, confirmAddEmployee } = employeeData; 
         let employee; 
+
+        if (role === "Engineer") {
+            employee = new Engineer (name, email, id, gitHub);
+
+            console.log(employee);
+
+        } else if (role === "Intern") {
+            employee = new Intern (name, email, id, school);
+
+            console.log(employee);
+        }
+
+        teamArray.push(employee); 
     
         if (confirmAddEmployee) {
             return addEmployee(teamArray); 
@@ -173,4 +202,5 @@ const addEmployee = () => {
     })
 };
 
-addEmployee();
+addManager()
+.then(addEmployee);

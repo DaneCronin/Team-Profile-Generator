@@ -6,17 +6,17 @@ const Manager = require('../lib/Manager');
 test('Creates new Manager', () => {
     const manager = new Manager ('Dane', 'DaneCronin@gmail.com', 1, 3036411791,);
 
-    expect(manager.name).toBe('Dane');
-    expect(manager.email).toBe('DaneCronin@gmail.com');
+    expect(manager.name).toEqual('Dane');
+    expect(manager.email).toEqual('DaneCronin@gmail.com');
     expect(manager.id).toEqual(expect.any(Number));
     expect(manager.officeNumber).toEqual(expect.any(Number));
 
 });
 
 //Get role from getRole()
-// test('gets role of employee', () => {
-//     const manager = new Manager ('Dane', 'DaneCronin@gmail.com', 1, 3036411791,);
+test('gets role of employee', () => {
+    const manager = new Manager ('Dane', 'DaneCronin@gmail.com', 1, 3036411791,);
 
-//     expect(manager.getRole()).toEqual("Manager");
-// });
+    expect(manager.getRole()).toEqual("Manager");
+});
 

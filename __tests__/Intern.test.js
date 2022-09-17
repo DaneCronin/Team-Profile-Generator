@@ -1,5 +1,5 @@
 //Use Intern constructor
-const { default: test } = require('node:test');
+
 const Intern = require('../lib/Intern');
 
 //test to see if Intern object is created
