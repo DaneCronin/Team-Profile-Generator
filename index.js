@@ -5,6 +5,7 @@ const fs = require('fs');
 //Team profiles
 const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
 
 
 //Create array to hold a team
@@ -92,6 +93,12 @@ const addEmployee = () => {
     
     return inquirer.prompt ([
         {
+            type: 'list',
+            name: 'role',
+            message: "Please choose your employee's role",
+            choices: ['Engineer', 'Intern']
+        },
+        {
             type: 'input',
             name: 'name',
             message: 'What is the name of the employee?',
@@ -129,8 +136,41 @@ const addEmployee = () => {
                     return false;
                 }
             }
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "Please enter the intern's school",
+           // when: schoolInput => input.role === "Intern",
+            validate: schoolInput => {
+                if(schoolInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the intern's school!");
+                    return false;
+                }
+            }
+
+        },
+        {
+            type: 'confirm',
+            name: 'confirmAddEmployee',
+            message: 'Would you like to add more team members?',
+            default: false
         }
     ])
+    .then(employeeData => {
+        // data for employee types 
+
+        let { name, id, email, role, github, school, confirmAddEmployee } = employeeData; 
+        let employee; 
+    
+        if (confirmAddEmployee) {
+            return addEmployee(teamArray); 
+        } else {
+            return teamArray;
+        }
+    })
 };
 
 addEmployee();
