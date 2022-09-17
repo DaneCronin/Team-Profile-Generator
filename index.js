@@ -7,6 +7,10 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 
 
+//Create array to hold a team
+const teamArray = [];
+
+
 
 // Manager questions/prompts
 const addManager = () => {
@@ -64,9 +68,15 @@ const addManager = () => {
             }
         }
     ])
+    .then(managerInput => {
+        const {name, email, id, officeNumber} = managerInput;
+        const manager = new Manager (name, email, id, officeNumber);
 
+        teamArray.push(manager);
+        console.log(manager);
+
+    })
 };
-
 
 
 
@@ -78,7 +88,7 @@ const addEmployee = () => {
     ===============
     Adding employees to team
     ===============
-    `)
+    `);
     
     return inquirer.prompt ([
         {
