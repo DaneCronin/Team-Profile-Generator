@@ -140,21 +140,6 @@ const addEmployee = () => {
         },
         {
             type: 'input',
-            name: 'school',
-            message: "Please enter the intern's school",
-           // when: schoolInput => input.role === "Intern",
-            validate: schoolInput => {
-                if(schoolInput) {
-                    return true;
-                } else {
-                    console.log("Please enter the intern's school!");
-                    return false;
-                }
-            }
-
-        },
-        {
-            type: 'input',
             name: 'gitHub',
             message: "Please enter the engineer's GitHub username (no @ needed)",
             when: (input) => input.role === "Engineer",
@@ -163,6 +148,21 @@ const addEmployee = () => {
                     return true;
                 } else {
                     console.log("Please enter the engineer's GitHub username!");
+                    return false;
+                }
+            }
+
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "Please enter the intern's school",
+            when: (input) => input.role === "Intern",
+            validate: schoolInput => {
+                if(schoolInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the intern's school!");
                     return false;
                 }
             }
@@ -178,7 +178,7 @@ const addEmployee = () => {
     .then(employeeData => {
         // data for employees 
 
-        let { name, id, email, role, github, school, confirmAddEmployee } = employeeData; 
+        let { name, email, id, role, gitHub, school, confirmAddEmployee } = employeeData; 
         let employee; 
 
         if (role === "Engineer") {
