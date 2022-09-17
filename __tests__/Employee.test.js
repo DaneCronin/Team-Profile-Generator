@@ -1,6 +1,6 @@
 
 //Use Employee constructor
-const Employee = require('./lib/Employee');
+const Employee = require('../lib/Employee');
 
 //Test to see if employee object is created
 test('Creates new Employee', () => {
@@ -17,7 +17,7 @@ test('Creates new Employee', () => {
 test('gets employee name', () => {
     const employee = new Employee ('Dane', 'DaneCronin@gmail.com', 1);
 
-    expect(employee.getName().toEqual('Dane'));
+    expect(employee.getName().toEqual(expect.'Dane'));
 });
 
 
@@ -25,7 +25,7 @@ test('gets employee name', () => {
 test('gets employee email', () => {
     const employee = new Employee ('Dane', 'DaneCronin@gmail.com', 1);
 
-    expect(employee.getEmail().toEqual('DaneCronin@gmail.com'));
+    expect(employee.getEmail().toEqual(expect.'DaneCronin@gmail.com'));
 })
 
 //Test to see if gets ID from getID()

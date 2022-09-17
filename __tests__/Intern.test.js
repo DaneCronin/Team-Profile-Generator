@@ -1,5 +1,5 @@
 //Use Intern constructor
-const Intern = require('./lib/Intern');
+const Intern = require('../lib/Intern');
 
 //test to see if Intern object is created
 test('Creates new Intern', () => {
