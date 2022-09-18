@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 //Link to generateHTML for page creation
-const generateHTML = require('./src/generateHTML');
+const generateHTML = require('./src/generateHTML')
 
 //Team profiles
 const Employee = require('./lib/Employee');
