@@ -28,7 +28,6 @@
   ![image](https://user-images.githubusercontent.com/107944830/191374442-341cce20-9711-4e56-9425-f4122a5e5a80.png)
 
 
-  Usage
 
   ## Contributing
   *Please follow these guidelines if you would like to contribute:*
