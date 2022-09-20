@@ -21,6 +21,12 @@
 
   ## Usage
   *Instructions and examples for use:*
+  Video Tutorial of application in use: 
+  https://watch.screencastify.com/v/Wk93NCsJhGdAAxp3XEBs
+  
+  Generated HTML Page: 
+  ![image](https://user-images.githubusercontent.com/107944830/191374442-341cce20-9711-4e56-9425-f4122a5e5a80.png)
+
 
   Usage
 
