@@ -5,14 +5,15 @@ const managerCard = function(manager) {
     return `
     <div class="col-4 mt-4">
         <div class= "card">
-            <div class= "card-header">
-                <h3>${manager.name}</h3>
-                <h4>Manager</h4>
+            <div class= "card-header text-white bg-secondary mb-3">
+                <h3>${manager.name} </h3>
+                <h4><i class="fa-solid fa-user"></i>
+                Manager</h4>
             </div>
 
             <div class="card-body">
                 <p class= "id">ID: ${manager.id}</p>
-                <p class= "email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p class= "email">Email: <a href="mailto:${manager.email}"> ${manager.email}</a></p>
                 <p class= "officeNumber">Office Number: ${manager.officeNumber}</p>
             </div>
 
@@ -27,15 +28,15 @@ const engineerCard = function(engineer) {
     return `
     <div class="col-4 mt-4">
         <div class= "card">
-            <div class= "card-header">
-                <h3>${engineer.name}</h3>
-                <h4>Engineer</h4>
+            <div class= "card-header text-white bg-secondary mb-3">
+                <h3> ${engineer.name} </h3>
+                <h4><i class="fa-solid fa-laptop-code mr-2"></i>Engineer</h4>
             </div>
 
             <div class="card-body">
-                <p class= "id">ID: ${engineer.id}</p>
-                <p class= "email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class= "github">Github: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
+                <p class= "id">ID: ${engineer.id} </p>
+                <p class= "email">Email: <a href="mailto:${engineer.email}"> ${engineer.email}</a></p>
+                <p class= "github">Github: <a href="https://github.com/${engineer.github}" target="_blank"> ${engineer.github}</a></p>
             </div>
 
         </div>
@@ -48,14 +49,16 @@ const internCard = function(intern) {
     return `
     <div class="col-4 mt-4">
         <div class= "card">
-            <div class= "card-header">
+            <div class= "card-header text-white bg-secondary mb-3">
                 <h3>${intern.name}</h3>
-                <h4>Intern</h4>
+                <h4><i class="fa-solid fa-graduation-cap"></i>
+
+                Intern</h4>
             </div>
 
             <div class="card-body">
                 <p class= "id">ID: ${intern.id}</p>
-                <p class= "email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                <p class= "email">Email: <a href="mailto:${intern.email}"> ${intern.email}</a></p>
                 <p class= "school">School: ${intern.school}</p>
             </div>
 
@@ -66,7 +69,7 @@ const internCard = function(intern) {
 
 //Function to push all generated team array data to page.
 generateHTML = (data) => {
-      // array for cards 
+      // Array for the cards
       pageArray = []; 
 
       for (let i = 0; i < data.length; i++) {
@@ -98,7 +101,7 @@ generateHTML = (data) => {
       }
   
       // joining strings 
-      const employeeCards = pageArray.join('')
+      const employeeCards = pageArray.join(' ');
   
       // return to generated page
       const generateTeam = generatePage(employeeCards); 
@@ -120,7 +123,7 @@ const generatePage = function (employeeCards) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Team Profile</title>
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="./dist/style.css">
      
@@ -129,14 +132,14 @@ const generatePage = function (employeeCards) {
 
     <body>
 
-        <header>
-            <h1>Team Profile</h1>
+        <header class= "bg-primary text-white mb-3 text-center">
+            <h1 class="justify-content-center"><i class="fa-regular fa-id-card mr-3"></i>Team Profile</h1>
       
         </header>
 
         <main>
-            <div>
-                <div>
+            <div class= "container">
+                <div class= "row justify-content-center">
                  ${employeeCards}
                  </div>
             </div>

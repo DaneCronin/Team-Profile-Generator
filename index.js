@@ -6,7 +6,6 @@ const fs = require('fs');
 const generateHTML = require('./src/generateHTML')
 
 //Team profiles
-const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
