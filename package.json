@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/DaneCronin/Team-Profile-Generator#readme",
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.4",
+    "nodemon": "^2.0.20"
   },
   "devDependencies": {
     "jest": "^29.0.3"
