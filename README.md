@@ -17,7 +17,7 @@
   ## Installation
   *Steps required to install project and how to get application running*
   
-  To install and run this app:  Clone this repo to your local machine and run "npm install" in your command-line to install the Inquire and Jest NPM's.  The application is launched by running  "node.index.js"  inside the  develop folder dirtectory. 
+  To install and run this app:  Clone this repo to your local machine and run "npm install" in your command-line to install the Inquirer and Jest NPM's.  The application is launched by running  "node.index.js" once you have navigated to the develop folder in the command-line. 
 
   ## Usage
   *Instructions and examples for use:*
